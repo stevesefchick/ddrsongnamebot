@@ -22,7 +22,17 @@ module.exports = {
         "Geisha",
         "Butterfly",
         "Campaign",
-        "Sale"
+        "Sale",
+        "Space",
+        "War",
+        "Alien",
+        "Jam",
+        "Rave",
+        "Dynamite",
+        "Fascination",
+        "Fire",
+        "Galaxy",
+        "Soda"
     ];
     
     noun = possibleNoun[randomnumber(possibleNoun.length)];

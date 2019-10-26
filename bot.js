@@ -2,6 +2,7 @@ var twit = require('twit');
 var config = require('./config.js');
 
 var songFormat = require('./songFunctions/songFormat.js');
+var artistName = require('./artistFunctions/artistName.js');
 
 /*
 const express = require('express');
@@ -10,18 +11,24 @@ const port = process.env.PORT;
 app.listen(port, () => console.log(`Listening on port ${port}!`));
 */
 
-//function returns a random number
-var randomnumber = function(max) {
-    return Math.floor(Math.random() * Math.floor(max));
-  }
-
-
   var generatePost = function()
   {
     var songName = "heck";
 
+    //SONG:
+    songName = "SONG: ";
+
     //DETERMINE SONG FORMAT FIRST
-    songName = songFormat.getSongFormat();
+    songName += songFormat.getSongFormat();
+
+    //CARRIAGE RETURN
+    songName += "\n";
+
+    //ARTIST:
+    songName += "ARTIST: ";
+
+    //GET ARTIST NAME
+    songName += artistName.getArtist();
 
     return songName;
   }
@@ -30,7 +37,7 @@ var randomnumber = function(max) {
   {
       var post = generatePost();
   
-      console.log('Posting--> ' + post);
+      console.log(post);
       
       // comment this out when testing!
       //Twitter.post('statuses/update', {status: post}, function(err, data, response) {
@@ -74,8 +81,6 @@ Max
 
 //have a "mix"?
 
-
-//artist
 
 //featuring?
 
