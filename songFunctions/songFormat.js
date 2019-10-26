@@ -4,6 +4,7 @@
 var songNoun = require('./songNoun.js');
 var songAdjective = require('./songAdjective.js');
 var songSeason = require('./songSeason.js');
+var songVerb = require('./songVerb.js');
 
 
 //function returns a random number
@@ -21,7 +22,8 @@ module.exports = {
         songNoun.getNoun() + " " + songNoun.getNoun(),                                                      //Noun + Noun
         songNoun.getNoun() + " " + songNoun.getNoun() + " " + songNoun.getNoun(),                           //Noun + Noun + Noun
         songAdjective.getAdjective() + " " + songNoun.getNoun(),                                            //Adjective + Noun
-        songAdjective.getAdjective() + " " + songSeason.getSeason() + " " + songNoun.getNoun()              //Adjective + Season + Noun
+        songAdjective.getAdjective() + " " + songSeason.getSeason() + " " + songNoun.getNoun(),             //Adjective + Season + Noun
+        songVerb.getVerb() + " " + songNoun.getNoun()                                                      //Verb + Noun
     ];
 
     var possibleEndings = [
@@ -33,10 +35,32 @@ module.exports = {
         "",
         "",
         "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
         "...",
         "!",
         "!!!",
-        " <3",
+        " ♡",
+        " ♥",
         " ☆",
         " 300",
         " 360",
@@ -95,5 +119,8 @@ Trip Machine
 12 Cutesy
 Love <3 Shine
 Love Love Magic
+
+//
+verb the noun
 
 */

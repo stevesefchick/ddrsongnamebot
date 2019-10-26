@@ -96,7 +96,34 @@ module.exports = {
         "DJ Shimamura",
         "S&K",
         "Pharrell Williams",
-        "PAPAYA"
+        "PAPAYA",
+        "4 REEEL",
+        "tiger YAMATO",
+        "Duran Duran",
+        "NRG Factory",
+        "NAOKI underground",
+        "BUS STOP",
+        "Okuyatos",
+        "U.T.D. & Friends",
+        "Temporary Loverse",
+        "Stone Bros.",
+        "The Specials",
+        "TAG underground",
+        "X-TREME",
+        "ANNA",
+        "DJ KAZU",
+        "MITSU-O!",
+        "Ω",
+        "2 UNLIMITED",
+        "Z",
+        "Big Idea",
+        "HuΣeR",
+        "Jonny Dynamite!",
+        "180",
+        "190",
+        "270",
+        "DJ Kale",
+        "UZI-LAY"
 
     ];
     
@@ -105,12 +132,3 @@ module.exports = {
     return artist;
     }
 };
-
-
-
-/*
-- Normal Artists
-
-- A symbol
-
-*/
