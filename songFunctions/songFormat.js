@@ -19,11 +19,30 @@ module.exports = {
     
     var possibleFormat= [
         songNoun.getNoun() + " " + songNoun.getNoun(),                                                      //Noun + Noun
+        songNoun.getNoun() + " " + songNoun.getNoun() + " " + songNoun.getNoun(),                           //Noun + Noun + Noun
         songAdjective.getAdjective() + " " + songNoun.getNoun(),                                            //Adjective + Noun
         songAdjective.getAdjective() + " " + songSeason.getSeason() + " " + songNoun.getNoun()              //Adjective + Season + Noun
     ];
+
+    var possibleEndings = [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "...",
+        "!",
+        "!!!",
+        " <3",
+        " 300",
+        " 360",
+        " 440"
+    ];
     
-    format = possibleFormat[randomnumber(possibleFormat.length)];
+    format = possibleFormat[randomnumber(possibleFormat.length)] + possibleEndings[randomnumber(possibleEndings.length)];
     
     return format;
     }
