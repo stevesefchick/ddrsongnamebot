@@ -5,6 +5,8 @@ var randomnumber = function(max) {
     return Math.floor(Math.random() * Math.floor(max));
   }
 
+  var artistFeature = require('./artistFeatureType.js');
+
 
 
 module.exports = {
@@ -128,6 +130,12 @@ module.exports = {
     ];
     
     artist = possibleArtist[randomnumber(possibleArtist.length)];
+
+    //20% of adding "featuring"
+    if (randomnumber(5) == 1)
+    {
+      artist += artistFeature.getFeature() + possibleArtist[randomnumber(possibleArtist.length)];
+    }
     
     return artist;
     }

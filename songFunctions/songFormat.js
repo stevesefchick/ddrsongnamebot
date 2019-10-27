@@ -23,7 +23,8 @@ module.exports = {
         songNoun.getNoun() + " " + songNoun.getNoun() + " " + songNoun.getNoun(),                           //Noun + Noun + Noun
         songAdjective.getAdjective() + " " + songNoun.getNoun(),                                            //Adjective + Noun
         songAdjective.getAdjective() + " " + songSeason.getSeason() + " " + songNoun.getNoun(),             //Adjective + Season + Noun
-        songVerb.getVerb() + " " + songNoun.getNoun()                                                      //Verb + Noun
+        songVerb.getVerb() + " " + songNoun.getNoun(),                                                      //Verb + Noun
+        songVerb.getVerb() + " the " + songNoun.getNoun()                                                   //Verb + "the" + Noun
     ];
 
     var possibleEndings = [

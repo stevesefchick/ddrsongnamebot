@@ -14,7 +14,11 @@ module.exports = {
     var possibleVerb= [
         "Bounce",
         "Drive",
-        "Dream"
+        "Dream",
+        "Drop",
+        "Raise",
+        "Lift",
+        "Move"
     ];
     
     verb = possibleVerb[randomnumber(possibleVerb.length)];
