@@ -39,7 +39,11 @@ module.exports = {
         "Air",
         "Radio",
         "Beach",
-        "Bunny"
+        "Bunny",
+        "Cutie",
+        "Prism",
+        "Starlight",
+        "Bomb"
     ];
     
     noun = possibleNoun[randomnumber(possibleNoun.length)];

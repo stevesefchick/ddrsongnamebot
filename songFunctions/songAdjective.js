@@ -19,7 +19,8 @@ module.exports = {
         "Special",
         "Sweet",
         "Dead",
-        "Electronic"
+        "Electronic",
+        "Little"
     ];
     
     adj = possibleAdj[randomnumber(possibleAdj.length)];
