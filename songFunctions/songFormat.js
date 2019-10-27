@@ -5,7 +5,7 @@ var songNoun = require('./songNoun.js');
 var songAdjective = require('./songAdjective.js');
 var songSeason = require('./songSeason.js');
 var songVerb = require('./songVerb.js');
-
+var songMix = require('./songMix.js');
 
 //function returns a random number
 var randomnumber = function(max) {
@@ -70,6 +70,13 @@ module.exports = {
     
     format = possibleFormat[randomnumber(possibleFormat.length)] + possibleEndings[randomnumber(possibleEndings.length)];
     
+    //25% of adding "mix"
+    if (randomnumber(4) == 1)
+    {
+        format += " " + songMix.getMix();
+    }
+
+
     return format;
     }
 };
