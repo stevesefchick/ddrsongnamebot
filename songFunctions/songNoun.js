@@ -16,6 +16,7 @@ module.exports = {
         "Magic",
         "Love",
         "Star",
+        "Ego",
         "Dance",
         "Hero",
         "Samurai",
@@ -43,7 +44,11 @@ module.exports = {
         "Cutie",
         "Prism",
         "Starlight",
-        "Bomb"
+        "Bomb",
+        "Ghost",
+        "Dollar",
+        "Heat",
+        "Dream"
     ];
     
     noun = possibleNoun[randomnumber(possibleNoun.length)];

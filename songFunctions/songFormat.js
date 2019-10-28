@@ -6,6 +6,7 @@ var songAdjective = require('./songAdjective.js');
 var songSeason = require('./songSeason.js');
 var songVerb = require('./songVerb.js');
 var songMix = require('./songMix.js');
+var songBridge = require('./songBridge.js');
 
 //function returns a random number
 var randomnumber = function(max) {
@@ -19,17 +20,16 @@ module.exports = {
     var format="";
     
     var possibleFormat= [
-        songNoun.getNoun() + " " + songNoun.getNoun(),                                                      //Noun + Noun
-        songNoun.getNoun() + " " + songNoun.getNoun() + " " + songNoun.getNoun(),                           //Noun + Noun + Noun
-        songAdjective.getAdjective() + " " + songNoun.getNoun(),                                            //Adjective + Noun
-        songAdjective.getAdjective() + " " + songSeason.getSeason() + " " + songNoun.getNoun(),             //Adjective + Season + Noun
-        songVerb.getVerb() + " " + songNoun.getNoun(),                                                      //Verb + Noun
-        songVerb.getVerb() + " the " + songNoun.getNoun()                                                   //Verb + "the" + Noun
+        songNoun.getNoun() + " " + songNoun.getNoun(),                                                          //Noun + Noun
+        songNoun.getNoun() + " " + songNoun.getNoun() + " " + songNoun.getNoun(),                               //Noun + Noun + Noun
+        songAdjective.getAdjective() + " " + songNoun.getNoun(),                                                //Adjective + Noun
+        songAdjective.getAdjective() + " " + songSeason.getSeason() + " " + songNoun.getNoun(),                 //Adjective + Season + Noun
+        songVerb.getVerb() + " " + songNoun.getNoun(),                                                          //Verb + Noun
+        songVerb.getVerb() + " " + songBridge.getBridge() + " " + songNoun.getNoun(),                           //Verb + Bridge + Noun
+        songAdjective.getAdjective() + " " + songAdjective.getAdjective + " " + songAdjective.getAdjective()   //Adjective + Adjective + Adjective
     ];
 
     var possibleEndings = [
-        "",
-        "",
         "",
         "",
         "",
@@ -71,8 +71,8 @@ module.exports = {
     
     format = possibleFormat[randomnumber(possibleFormat.length)] + possibleEndings[randomnumber(possibleEndings.length)];
     
-    //25% of adding "mix"
-    if (randomnumber(4) == 1)
+    //33% of adding "mix"
+    if (randomnumber(3) == 1)
     {
         format += " " + songMix.getMix();
     }
