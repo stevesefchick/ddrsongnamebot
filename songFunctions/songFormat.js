@@ -65,7 +65,8 @@ module.exports = {
         " ☆",
         " 300",
         " 360",
-        " 440"
+        " 440",
+        " EVOLVED"
     ];
     
     format = possibleFormat[randomnumber(possibleFormat.length)] + possibleEndings[randomnumber(possibleEndings.length)];

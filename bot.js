@@ -1,22 +1,24 @@
 var twit = require('twit');
 var config = require('./config.js');
+var Twitter = new twit(config);
+
 
 var songFormat = require('./songFunctions/songFormat.js');
 var artistName = require('./artistFunctions/artistName.js');
 
-/*
-const express = require('express');
-const app = express();
-const port = process.env.PORT;
-app.listen(port, () => console.log(`Listening on port ${port}!`));
-*/
+
+//const express = require('express');
+//const app = express();
+//const port = process.env.PORT;
+//app.listen(port, () => console.log(`Listening on port ${port}!`));
+
 
   var generatePost = function()
   {
     var songName = "heck";
 
     //SONG:
-    songName = "SONG: ";
+    songName = "📀 ";
 
     //DETERMINE SONG FORMAT FIRST
     songName += songFormat.getSongFormat();
@@ -25,7 +27,7 @@ app.listen(port, () => console.log(`Listening on port ${port}!`));
     songName += "\n";
 
     //ARTIST:
-    songName += "ARTIST: ";
+    songName += "👤 ";
 
     //GET ARTIST NAME
     songName += artistName.getArtist();
@@ -40,47 +42,16 @@ app.listen(port, () => console.log(`Listening on port ${port}!`));
       console.log(post);
       
       // comment this out when testing!
-      //Twitter.post('statuses/update', {status: post}, function(err, data, response) {
-      //    console.log(data)
-      //})
+      Twitter.post('statuses/update', {status: post}, function(err, data, response) {
+          console.log(data)
+      })
       
   }
 
 
-
-
-
-
-
-//postThatBadSong();
+postThatBadSong();
 
 
 
 //debug - run a whole buttload
-setInterval(postThatBadSong, 300);
-
-
-
-
-
-//add ons?
-/*
-Evolved
-
-Max
-
-440
-
-300 
-
-360
-*/
-
-//is all caps? all lowercase?
-
-
-//have a "mix"?
-
-
-//featuring?
-// VS
+//setInterval(postThatBadSong, 300);
