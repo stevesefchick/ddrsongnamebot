@@ -17,7 +17,10 @@ module.exports = {
         "through the",
         "the",
         "with the",
-        "a"
+        "a",
+        "without",
+        "of",
+        "or"
     ];
     
     bridge = possibleBridge[randomnumber(possibleBridge.length)];

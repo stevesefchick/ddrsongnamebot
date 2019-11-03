@@ -48,7 +48,31 @@ module.exports = {
         "Ghost",
         "Dollar",
         "Heat",
-        "Dream"
+        "Dream",
+        "Party",
+        "Rock",
+        "Chaser",
+        "Maid",
+        "Color",
+        "Century",
+        "Era",
+        "Legend",
+        "Revolution",
+        "Generation",
+        "Delta",
+        "Rampage",
+        "Respect",
+        "Chaos",
+        "Journey",
+        "Addict",
+        "Ace",
+        "Proof",
+        "Cat",
+        "Mark",
+        "Climax",
+        "Heat",
+        "Fairytale",
+        "Day"
     ];
     
     noun = possibleNoun[randomnumber(possibleNoun.length)];

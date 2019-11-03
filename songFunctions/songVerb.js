@@ -18,7 +18,16 @@ module.exports = {
         "Drop",
         "Raise",
         "Lift",
-        "Move"
+        "Move",
+        "Catch",
+        "Love",
+        "End",
+        "Vanquish",
+        "Splash",
+        "Give",
+        "Believe",
+        "Fly",
+        "Tell"
     ];
     
     verb = possibleVerb[randomnumber(possibleVerb.length)];
