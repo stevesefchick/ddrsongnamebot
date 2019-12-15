@@ -72,7 +72,15 @@ module.exports = {
         "Climax",
         "Heat",
         "Fairytale",
-        "Day"
+        "Day",
+        "Fantasia",
+        "Possession",
+        "Sky",
+        "Diamond",
+        "Night",
+        "Monkey",
+        "Business",
+        "Bag"
     ];
     
     noun = possibleNoun[randomnumber(possibleNoun.length)];

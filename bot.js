@@ -7,12 +7,6 @@ var songFormat = require('./songFunctions/songFormat.js');
 var artistName = require('./artistFunctions/artistName.js');
 
 
-//const express = require('express');
-//const app = express();
-//const port = process.env.PORT;
-//app.listen(port, () => console.log(`Listening on port ${port}!`));
-
-
   var generatePost = function()
   {
     var songName = "heck";
@@ -58,6 +52,8 @@ var artistName = require('./artistFunctions/artistName.js');
         Twitter.post('statuses/update', {status: post}, function(err, data, response) {
           console.log(data)
     })
+    
+
       }
 
 

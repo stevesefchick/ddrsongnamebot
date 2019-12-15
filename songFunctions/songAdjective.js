@@ -35,7 +35,8 @@ module.exports = {
         "Gold",
         "Happy",
         "Lucky",
-        "Funky"
+        "Funky",
+        "Crazy"
     ];
     
     adj = possibleAdj[randomnumber(possibleAdj.length)];

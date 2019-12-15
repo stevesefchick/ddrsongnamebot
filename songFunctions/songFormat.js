@@ -7,6 +7,7 @@ var songSeason = require('./songSeason.js');
 var songVerb = require('./songVerb.js');
 var songMix = require('./songMix.js');
 var songBridge = require('./songBridge.js');
+var songFakeword = require('./songFakeword.js');
 
 //function returns a random number
 var randomnumber = function(max) {
@@ -26,7 +27,9 @@ module.exports = {
         songAdjective.getAdjective() + " " + songSeason.getSeason() + " " + songNoun.getNoun(),                 //Adjective + Season + Noun
         songVerb.getVerb() + " " + songNoun.getNoun(),                                                          //Verb + Noun
         songVerb.getVerb() + " " + songBridge.getBridge() + " " + songNoun.getNoun(),                           //Verb + Bridge + Noun
-        songAdjective.getAdjective() + " " + songAdjective.getAdjective + " " + songAdjective.getAdjective()   //Adjective + Adjective + Adjective
+        songAdjective.getAdjective() + " " + songAdjective.getAdjective + " " + songAdjective.getAdjective(),   //Adjective + Adjective + Adjective
+        songFakeword.getWordPart(),                                                                             //Fakeword
+        songNoun.getNoun() + " " + songFakeword.getWordPart()                                                  //Noun + Fakeword
     ];
 
     var possibleEndings = [

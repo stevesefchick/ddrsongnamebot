@@ -125,7 +125,8 @@ module.exports = {
         "190",
         "270",
         "DJ Kale",
-        "UZI-LAY"
+        "UZI-LAY",
+        "Cranky"
 
     ];
     
