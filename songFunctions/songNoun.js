@@ -80,7 +80,12 @@ module.exports = {
         "Night",
         "Monkey",
         "Business",
-        "Bag"
+        "Bag",
+        "Cyber",
+        "Arrow",
+        "Angel",
+        "Glitch",
+        "Chocolate"
     ];
     
     noun = possibleNoun[randomnumber(possibleNoun.length)];

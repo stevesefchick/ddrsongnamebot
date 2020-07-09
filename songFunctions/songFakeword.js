@@ -22,7 +22,9 @@ module.exports = {
         "Alpa",
         "Ego",
         "Siber",
-        "Night"
+        "Night",
+        "Over",
+        "Cyber"
     ];
     
     var possibleLastWordPart= [
@@ -36,7 +38,8 @@ module.exports = {
         "ism",
         "nite",
         "iata",
-        "nova"
+        "nova",
+        "soul"
     ];
 
     wordpart = possibleFirstWordPart[randomnumber(possibleFirstWordPart.length)] + possibleLastWordPart[randomnumber(possibleLastWordPart.length)];

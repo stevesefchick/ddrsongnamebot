@@ -20,7 +20,8 @@ module.exports = {
         "a",
         "without",
         "of",
-        "or"
+        "or",
+        "of the"
     ];
     
     bridge = possibleBridge[randomnumber(possibleBridge.length)];
