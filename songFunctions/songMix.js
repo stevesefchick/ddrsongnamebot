@@ -95,7 +95,8 @@ module.exports = {
         "(Almighty Mix)",
         "(interlude)",
         "(Super-Max-Me Mix)",
-        "(SUMMERTIME EXTENDED Version)"
+        "(SUMMERTIME EXTENDED Version)",
+        "[DJ Command Remix]"
     ];
     
     mix = possibleMix[randomnumber(possibleMix.length)];

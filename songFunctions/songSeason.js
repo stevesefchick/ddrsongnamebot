@@ -15,7 +15,8 @@ module.exports = {
         "Winter",
         "Snowy",
         "Summer",
-        "Spring"
+        "Spring",
+        "Midnight"
     ];
     
     season = possibleSeason[randomnumber(possibleSeason.length)];

@@ -85,7 +85,13 @@ module.exports = {
         "Arrow",
         "Angel",
         "Glitch",
-        "Chocolate"
+        "Chocolate",
+        "Cindarella",
+        "Anthem",
+        "Stardom",
+        "Amaretto",
+        "Card",
+        "Queen"
     ];
     
     noun = possibleNoun[randomnumber(possibleNoun.length)];

@@ -28,7 +28,9 @@ module.exports = {
         "Believe",
         "Fly",
         "Tell",
-        "Rush"
+        "Rush",
+        "Take",
+        "Go"
     ];
     
     verb = possibleVerb[randomnumber(possibleVerb.length)];

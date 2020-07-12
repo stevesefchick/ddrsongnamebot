@@ -126,7 +126,8 @@ module.exports = {
         "270",
         "DJ Kale",
         "UZI-LAY",
-        "Cranky"
+        "Cranky",
+        "Blanc Bunny Bandit"
 
     ];
     
