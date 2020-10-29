@@ -2,9 +2,36 @@ var twit = require('twit');
 var config = require('./config.js');
 var Twitter = new twit(config);
 
+const { createCanvas, loadImage } = require('canvas');
+const canvas = createCanvas(300, 300);
+const ctx = canvas.getContext('2d');
+
 
 var songFormat = require('./songFunctions/songFormat.js');
 var artistName = require('./artistFunctions/artistName.js');
+var imageBG = require('./imageFunctions/getRandomBGURL.js');
+
+var standalonesongname;
+
+var generateImage = function()
+{
+  var data;
+
+ctx.font = '30px Impact';
+
+// Draw cat with lime helmet
+loadImage(imageBG.getRandoBG()).then((image) => {
+  ctx.drawImage(image, 0, 0, 300, 300)
+  ctx.fillText(standalonesongname, 100, 100)
+
+  console.log(canvas.toDataURL())
+
+  data = canvas.toDataURL();
+})
+
+return data;
+
+}
 
 
   var generatePost = function()
@@ -15,7 +42,8 @@ var artistName = require('./artistFunctions/artistName.js');
     songName = "📀 ";
 
     //DETERMINE SONG FORMAT FIRST
-    songName += songFormat.getSongFormat();
+    standalonesongname = songFormat.getSongFormat();
+    songName += standalonesongname;
 
     //CARRIAGE RETURN
     songName += "\n";
@@ -29,13 +57,20 @@ var artistName = require('./artistFunctions/artistName.js');
     return songName;
   }
 
+
+
+
   var randomnumber = function(max) {
     return Math.floor(Math.random() * Math.floor(max));
   }
 
+
+
+
   var postThatBadSong = function()
   {
       var post = generatePost();
+      var image = generateImage();
   
       console.log(post);
 
@@ -49,9 +84,9 @@ var artistName = require('./artistFunctions/artistName.js');
       else
       {
         // comment this out when testing!
-        Twitter.post('statuses/update', {status: post}, function(err, data, response) {
-          console.log(data)
-    })
+        //Twitter.post('statuses/update', {status: post}, function(err, data, response) {
+        //  console.log(data)
+        //})
     
 
       }
@@ -62,7 +97,6 @@ var artistName = require('./artistFunctions/artistName.js');
 
 
 postThatBadSong();
-
 
 
 //debug - run a whole buttload
