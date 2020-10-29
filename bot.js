@@ -1,3 +1,12 @@
+//TODO
+//1 - DO RECON ON DDR IMAGE BGs
+//2 - ADD DDR IMAGE BGs TO POSSIBLE OUTCOMES
+//3 - GENERATE SIZING/AUTO FITTING OF SONG TITLES
+//4 - ADD FONT VARIATIONS
+//5 - ADD ARTIST INCLUSION
+//6 - ADD FONT COLOR VARIATIONS
+
+
 var twit = require('twit');
 var config = require('./config.js');
 var Twitter = new twit(config);
