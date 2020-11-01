@@ -4,8 +4,8 @@
 //3 - GENERATE SIZING/AUTO FITTING OF SONG TITLES
 //4 - ADD FONT VARIATIONS
 //5 - ADD ARTIST INCLUSION
-//6 - ADD FONT COLOR VARIATIONS
 //7 - DRAW IMAGES ON TOP EACH OTHER
+//8 - ADD FONT DROPSHADOW OR BORDER
 
 var twit = require('twit');
 var config = require('./config.js');
@@ -19,6 +19,7 @@ const ctx = canvas.getContext('2d');
 var songFormat = require('./songFunctions/songFormat.js');
 var artistName = require('./artistFunctions/artistName.js');
 var imageBG = require('./imageFunctions/getRandomBGURL.js');
+var imageFG = require('./imageFunctions/getRandomFGURL.js');
 var fontColor = require('./imageFunctions/getRandomColor.js');
 
 var standalonesongname;
@@ -29,14 +30,23 @@ var generateImage = function()
 
 ctx.font = '30px Impact';
 
+//load bg image
 loadImage(imageBG.getRandoBG()).then((image) => {
-  ctx.drawImage(image, 0, 0, 300, 300);
-  ctx.fillStyle=fontColor.getRandoColor();
-  ctx.fillText(standalonesongname, 15, 100);
+  //load fg image
+  loadImage(imageFG.getRandoForeground()).then((fgimage) =>
+  {
+    //bg
+    ctx.drawImage(image, 0, 0, 300, 300);
+    //fg
+    ctx.drawImage(fgimage,100,100,100,100);
+    //text
+    ctx.fillStyle=fontColor.getRandoColor();
+    ctx.fillText(standalonesongname, 15, 100);
 
-  console.log(canvas.toDataURL());
-
-  data = canvas.toDataURL();
+    //finish up
+    console.log(canvas.toDataURL());
+    data = canvas.toDataURL();
+  })
 })
 
 return data;
