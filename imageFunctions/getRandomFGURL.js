@@ -13,7 +13,9 @@ module.exports = {
     
     var possibleFG= [
       'images/fg/egg.png',
-      'images/fg/pants.png'
+      'images/fg/pants.png',
+      'images/fg/gator.png',
+      'images/fg/gothflower.png'
     ];
     
     fg = possibleFG[randomnumber(possibleFG.length)];

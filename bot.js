@@ -1,34 +1,40 @@
 //TODO
-//1 - DO RECON ON DDR IMAGE BGs
-//2 - ADD DDR IMAGE BGs TO POSSIBLE OUTCOMES
 //3 - GENERATE SIZING/AUTO FITTING OF SONG TITLES
 //4 - ADD FONT VARIATIONS
 //5 - ADD ARTIST INCLUSION
-//7 - DRAW IMAGES ON TOP EACH OTHER
-//8 - ADD FONT DROPSHADOW OR BORDER
+//9 - ADD TEXT POSITION RANDOMIZATION
+//10 - REGISTER NEW FONTS TO USE
+//11 - ADD DROP SHADOW RANDOMIZATION
 
 var twit = require('twit');
 var config = require('./config.js');
 var Twitter = new twit(config);
+var standalonesongname;
 
 const { createCanvas, loadImage } = require('canvas');
 const canvas = createCanvas(300, 300);
 const ctx = canvas.getContext('2d');
 
-
+//song name classes
 var songFormat = require('./songFunctions/songFormat.js');
 var artistName = require('./artistFunctions/artistName.js');
+//image generation classes
 var imageBG = require('./imageFunctions/getRandomBGURL.js');
 var imageFG = require('./imageFunctions/getRandomFGURL.js');
 var fontColor = require('./imageFunctions/getRandomColor.js');
+var fontStyle = require('./imageFunctions/getRandomFont.js');
 
-var standalonesongname;
+
+
+
+
 
 var generateImage = function()
 {
   var data;
 
-ctx.font = '30px Impact';
+ctx.font = fontStyle.getRandoFont();
+
 
 //load bg image
 loadImage(imageBG.getRandoBG()).then((image) => {
@@ -39,9 +45,15 @@ loadImage(imageBG.getRandoBG()).then((image) => {
     ctx.drawImage(image, 0, 0, 300, 300);
     //fg
     ctx.drawImage(fgimage,100,100,100,100);
+
     //text
+    ctx.font = fontStyle.getRandoFont();
     ctx.fillStyle=fontColor.getRandoColor();
+    ctx.shadowColor=fontColor.getRandoColor();
+    ctx.shadowOffsetX = 0;
+    ctx.shadowBlur = 10;
     ctx.fillText(standalonesongname, 15, 100);
+    
 
     //finish up
     console.log(canvas.toDataURL());
