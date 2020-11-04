@@ -23,6 +23,7 @@ module.exports = {
       'images/bg/bg_grad8.png',
       'images/bg/bg_spiral1.png',
       'images/bg/bg_spiral2.png',
+      'images/bg/bg_spiral3.png'
     ];
     
     bg = possibleBG[randomnumber(possibleBG.length)];
