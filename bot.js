@@ -4,7 +4,6 @@
 //5 - ADD ARTIST INCLUSION
 //9 - ADD TEXT POSITION RANDOMIZATION
 //10 - REGISTER NEW FONTS TO USE
-//11 - ADD DROP SHADOW RANDOMIZATION
 
 var twit = require('twit');
 var config = require('./config.js');
@@ -51,7 +50,7 @@ loadImage(imageBG.getRandoBG()).then((image) => {
     ctx.fillStyle=fontColor.getRandoColor();
     ctx.shadowColor=fontColor.getRandoColor();
     ctx.shadowOffsetX = 0;
-    ctx.shadowBlur = 10;
+    ctx.shadowBlur = fontColor.getRandoBlur();
     ctx.fillText(standalonesongname, 15, 100);
     
 
