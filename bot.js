@@ -23,7 +23,10 @@ var imageFG = require('./imageFunctions/getRandomFGURL.js');
 var fontColor = require('./imageFunctions/getRandomColor.js');
 var fontStyle = require('./imageFunctions/getRandomFont.js');
 
-
+//function returns a random number
+var randomnumber = function(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
 
 
 
@@ -42,8 +45,16 @@ loadImage(imageBG.getRandoBG()).then((image) => {
   {
     //bg
     ctx.drawImage(image, 0, 0, 300, 300);
+
     //fg
-    ctx.drawImage(fgimage,100,100,100,100);
+    var randomamount = randomnumber(10) + 1;
+    for (var i=0; i < randomamount;i++)
+    {
+      var xPos = randomnumber(400) - 100;
+      var yPos = randomnumber(400) - 100;
+      var scale = randomnumber(150) + 100;
+      ctx.drawImage(fgimage,xPos,yPos,scale,scale);
+    }
 
     //text
     ctx.font = fontStyle.getRandoFont();
