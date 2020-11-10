@@ -12,8 +12,14 @@ module.exports = {
     var currentfont="";
     
     var possibleFont= [
-        '30px Impact',
-        'bold 26px Impact'
+      '26px OCR A Extended',
+      '28px OCR A Extended',
+      '30px OCR A Extended',
+      '26px Comic Sans',
+      '28px Comic Sans',
+      '30px Comic Sans'
+      //'30px Impact',
+        //'bold 26px Impact'
     ];
     
     currentfont = possibleFont[randomnumber(possibleFont.length)];

@@ -3,14 +3,20 @@
 //4 - ADD FONT VARIATIONS
 //5 - ADD ARTIST INCLUSION
 //9 - ADD TEXT POSITION RANDOMIZATION
-//10 - REGISTER NEW FONTS TO USE
+//11 - Add a TON of FG images
+//12 - Add a TON of BG images
+//13 - Add "types" to jacket
+//14 - create text export
+//15 - add font varieties
 
 var twit = require('twit');
 var config = require('./config.js');
 var Twitter = new twit(config);
 var standalonesongname;
 
-const { createCanvas, loadImage } = require('canvas');
+const { registerFont, createCanvas, loadImage } = require('canvas');
+registerFont('fonts/comic.ttf', { family: 'Comic Sans' });
+registerFont('fonts/OCRAEXT.TTF', { family: 'OCR A Extended' });
 const canvas = createCanvas(300, 300);
 const ctx = canvas.getContext('2d');
 
