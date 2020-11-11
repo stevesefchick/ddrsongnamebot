@@ -17,6 +17,9 @@ var standalonesongname;
 const { registerFont, createCanvas, loadImage } = require('canvas');
 registerFont('fonts/comic.ttf', { family: 'Comic Sans' });
 registerFont('fonts/OCRAEXT.TTF', { family: 'OCR A Extended' });
+registerFont('fonts/BAUHS93.TTF', { family: 'Bauhaus 93' });
+registerFont('fonts/BEBAS_.TTF', { family: 'Bebas' });
+
 const canvas = createCanvas(300, 300);
 const ctx = canvas.getContext('2d');
 
@@ -28,6 +31,7 @@ var imageBG = require('./imageFunctions/getRandomBGURL.js');
 var imageFG = require('./imageFunctions/getRandomFGURL.js');
 var fontColor = require('./imageFunctions/getRandomColor.js');
 var fontStyle = require('./imageFunctions/getRandomFont.js');
+var textLocations = require('./imageFunctions/getTextLocations.js');
 
 //function returns a random number
 var randomnumber = function(max) {
@@ -68,7 +72,7 @@ loadImage(imageBG.getRandoBG()).then((image) => {
     ctx.shadowColor=fontColor.getRandoColor();
     ctx.shadowOffsetX = 0;
     ctx.shadowBlur = fontColor.getRandoBlur();
-    ctx.fillText(standalonesongname, 15, 100);
+    ctx.fillText(standalonesongname, 15, textLocations.getRandomYLocation());
     
 
     //finish up

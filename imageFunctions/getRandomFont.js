@@ -17,9 +17,14 @@ module.exports = {
       '30px OCR A Extended',
       '26px Comic Sans',
       '28px Comic Sans',
-      '30px Comic Sans'
-      //'30px Impact',
-        //'bold 26px Impact'
+      '30px Comic Sans',
+      '28px Bauhaus 93',
+      '26px Bauhaus 93',
+      '30px Bauhaus 93',     
+     '28px Bebas',
+     '26px Bebas',
+      '30px Bebas'
+
     ];
     
     currentfont = possibleFont[randomnumber(possibleFont.length)];
