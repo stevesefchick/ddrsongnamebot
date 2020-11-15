@@ -39,13 +39,65 @@ var randomnumber = function(max) {
 }
 
 
-
-
 var generateImage = function()
 {
   var data;
 
 ctx.font = fontStyle.getRandoFont();
+
+//check length
+var length = ctx.measureText(standalonesongname);
+var texts= [];
+
+//if over 270, split up
+if (length.width > 270)
+{
+  var currentextspot=0;
+  var cursor=0;
+  var lastspot=0;
+  var lastspace=0;
+
+  while (cursor < standalonesongname.length)
+  {
+    console.log(cursor);
+
+    var currenttext = standalonesongname.substring(lastspot,cursor);
+    console.log(currenttext);
+
+    if (ctx.measureText(currenttext).width > 270)
+    { 
+      console.log("adding one!");
+
+      texts[currentextspot] = standalonesongname.substring(lastspot,lastspace);
+
+      console.log(texts[currentextspot]);
+      currentextspot+=1;
+      cursor=lastspace;
+      lastspot=lastspace;
+
+
+    }
+
+    if (standalonesongname.substring(cursor,cursor+1) == " ")
+    {
+      lastspace=cursor;
+    }
+
+    cursor+=1;
+    if (cursor==standalonesongname.length)
+    {
+      texts[currentextspot] = standalonesongname.substring(lastspot,standalonesongname.length);
+
+    }
+  }
+
+}
+//If smaller, don't wrap
+else
+{
+  texts[0] = standalonesongname;
+}
+
 
 
 //load bg image
@@ -67,13 +119,21 @@ loadImage(imageBG.getRandoBG()).then((image) => {
     }
 
     //text
-    ctx.font = fontStyle.getRandoFont();
     ctx.fillStyle=fontColor.getRandoColor();
     ctx.shadowColor=fontColor.getRandoColor();
     ctx.shadowOffsetX = 0;
     ctx.shadowBlur = fontColor.getRandoBlur();
-    ctx.fillText(standalonesongname, 15, textLocations.getRandomYLocation());
-    
+
+   var startingY = textLocations.getRandomYLocation();
+   var yHeight = ctx.measureText(texts[0]).emHeightAscent;
+   
+   
+    for (var i=0; i < texts.length;++i)
+    {
+      ctx.fillText(texts[i], 15, startingY+(yHeight*i));
+
+      //ctx.fillText(standalonesongname, 15, textLocations.getRandomYLocation());
+    }
 
     //finish up
     console.log(canvas.toDataURL());
