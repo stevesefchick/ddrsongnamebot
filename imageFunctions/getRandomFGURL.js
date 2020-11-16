@@ -18,6 +18,7 @@ module.exports = {
       'images/fg/gothflower.png',
       'images/fg/triangle.png',
       'images/fg/star1.png',
+      'images/fg/square1.png'
 
     ];
     

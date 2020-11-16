@@ -1,8 +1,6 @@
 //TODO
-//3 - GENERATE SIZING/AUTO FITTING OF SONG TITLES
 //4 - ADD FONT VARIATIONS
 //5 - ADD ARTIST INCLUSION
-//9 - ADD TEXT POSITION RANDOMIZATION
 //11 - Add a TON of FG images
 //12 - Add a TON of BG images
 //13 - Add "types" to jacket
@@ -66,14 +64,11 @@ if (length.width > 270)
 
     if (ctx.measureText(currenttext).width > 270)
     { 
-      console.log("adding one!");
-
       texts[currentextspot] = standalonesongname.substring(lastspot,lastspace);
 
-      console.log(texts[currentextspot]);
       currentextspot+=1;
-      cursor=lastspace;
-      lastspot=lastspace;
+      cursor=lastspace+1;
+      lastspot=lastspace+1;
 
 
     }
@@ -131,8 +126,6 @@ loadImage(imageBG.getRandoBG()).then((image) => {
     for (var i=0; i < texts.length;++i)
     {
       ctx.fillText(texts[i], 15, startingY+(yHeight*i));
-
-      //ctx.fillText(standalonesongname, 15, textLocations.getRandomYLocation());
     }
 
     //finish up
