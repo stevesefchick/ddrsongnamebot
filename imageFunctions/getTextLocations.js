@@ -11,7 +11,7 @@ module.exports = {
  getRandomYLocation: function() {
     var currentloc="";
     
-    currentloc = randomnumber(200);
+    currentloc = randomnumber(175)+50;
     
     return currentloc;
     }

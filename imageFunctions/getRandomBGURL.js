@@ -29,9 +29,9 @@ module.exports = {
       'images/bg/bg_spiral5.jpg',
       'images/bg/bg_space1.jpg',
       'images/bg/bg_space2.jpg',
-      'images/bg_blur1.jpg',
-      'images/bg_sparkle1.jpg',
-      'images/bg_shock1.jpg'
+      'images/bg/bg_blur1.jpg',
+      'images/bg/bg_sparkle1.jpg',
+      'images/bg/bg_shock1.jpg'
     ];
     
     bg = possibleBG[randomnumber(possibleBG.length)];

@@ -1,22 +1,28 @@
 //TODO
-//4 - ADD FONT VARIATIONS
 //5 - ADD ARTIST INCLUSION
 //11 - Add a TON of FG images
 //12 - Add a TON of BG images
 //13 - Add "types" to jacket
-//14 - create text export
-//15 - add font varieties
 
 var twit = require('twit');
 var config = require('./config.js');
+var fs = require('fs');
 var Twitter = new twit(config);
 var standalonesongname;
 
 const { registerFont, createCanvas, loadImage } = require('canvas');
-registerFont('fonts/comic.ttf', { family: 'Comic Sans' });
 registerFont('fonts/OCRAEXT.TTF', { family: 'OCR A Extended' });
 registerFont('fonts/BAUHS93.TTF', { family: 'Bauhaus 93' });
 registerFont('fonts/BEBAS_.TTF', { family: 'Bebas' });
+registerFont('fonts/StalinistOne-Regular.ttf', {family: 'Stalinist One'});
+registerFont('fonts/Staatliches-Regular.ttf', {family: 'Staatliches'});
+registerFont('fonts/ConcertOne-Regular.ttf', {family: 'Concert One'});
+registerFont('fonts/Shojumaru-Regular.ttf', {family: 'Shojumaru'});
+registerFont('fonts/FredokaOne-Regular.ttf', {family: 'Fredoka One'});
+registerFont('fonts/Goldman-Bold.ttf', {family: 'Goldman'});
+registerFont('fonts/LuckiestGuy-Regular.ttf', {family: 'Luckiest Guy'});
+registerFont('fonts/MajorMonoDisplay-Regular.ttf', {family: 'Major Mono Display'});
+registerFont('fonts/Monoton-Regular.ttf', {family: 'Monoton'});
 
 const canvas = createCanvas(300, 300);
 const ctx = canvas.getContext('2d');
@@ -104,12 +110,12 @@ loadImage(imageBG.getRandoBG()).then((image) => {
     ctx.drawImage(image, 0, 0, 300, 300);
 
     //fg
-    var randomamount = randomnumber(10) + 1;
+    var randomamount = randomnumber(6) + 1;
     for (var i=0; i < randomamount;i++)
     {
       var xPos = randomnumber(400) - 100;
       var yPos = randomnumber(400) - 100;
-      var scale = randomnumber(150) + 100;
+      var scale = randomnumber(150) + 80;
       ctx.drawImage(fgimage,xPos,yPos,scale,scale);
     }
 
@@ -129,7 +135,16 @@ loadImage(imageBG.getRandoBG()).then((image) => {
     }
 
     //finish up
+    //comment this out when done testing
     console.log(canvas.toDataURL());
+    fs.writeFile('test_image_output/test.txt',canvas.toDataURL(), (err)=>
+    {
+        // In case of a error throw err. 
+        if (err) throw err; 
+    });
+
+
+
     data = canvas.toDataURL();
   })
 })
