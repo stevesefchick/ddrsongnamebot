@@ -165,9 +165,7 @@ function generateImagePromise(){
           ctx.fillText(texts[i], 15, startingY+(yHeight*i));
         }
     
-        //finish up
-        //comment this out when done testing
-        console.log(canvas.toDataURL());
+        //console.log(canvas.toDataURL());
         //fs.writeFile('test_image_output/test.txt',canvas.toDataURL(), (err)=>
         //{
             // In case of a error throw err. 
@@ -228,12 +226,10 @@ function generateImagePromise(){
               Twitter.post('media/upload', { media_data: imagedata }, function (err, data, response) {
                 if (err)
                 {
-                  console.log('oh no');
                   console.log(err);
                 }
                 else
                 {
-                  console.log('made it here');
                   var mediaIdStr = data.media_id_string
                   var altText = "Fake DDR Name Bot image!"
                   var meta_params = { media_id: mediaIdStr, alt_text: { text: altText } }
