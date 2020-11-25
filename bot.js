@@ -1,7 +1,6 @@
 //TODO
 //5 - ADD ARTIST INCLUSION
 //13 - Add "types" to jacket
-//14 - Add Real image output directory
 //15 - Integrate/test in heroku
 
 var twit = require('twit');
