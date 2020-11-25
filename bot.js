@@ -169,13 +169,13 @@ function generateImagePromise(){
         //finish up
         //comment this out when done testing
         console.log(canvas.toDataURL());
-        fs.writeFile('test_image_output/test.txt',canvas.toDataURL(), (err)=>
-        {
+        //fs.writeFile('test_image_output/test.txt',canvas.toDataURL(), (err)=>
+        //{
             // In case of a error throw err. 
-            if (err) throw err; 
-        });
+        //    if (err) throw err; 
+        //});
     
-        var outstream = fs.createWriteStream('test_image_output/image.png');
+        var outstream = fs.createWriteStream('image_output/image.png');
         var dataUrl = canvas.createPNGStream().pipe(outstream);
     
         data = canvas.toDataURL();
@@ -223,7 +223,7 @@ function generateImagePromise(){
       //otherwise, post!
       else
       {
-        var imagedata = fs.readFileSync('./test_image_output/image.png', {encoding:'base64'});
+        var imagedata = fs.readFileSync('./image_output/image.png', {encoding:'base64'});
 
             //console.log(image);
               Twitter.post('media/upload', { media_data: imagedata }, function (err, data, response) {
