@@ -1,7 +1,10 @@
 //TODO
-//5 - ADD ARTIST INCLUSION
-//13 - Add "types" to jacket
-//15 - Integrate/test in heroku
+//- ADD ARTIST INCLUSION
+//- Add "types" to jacket
+//- Add 3-4 more fonts
+//- Add 3-4 more FGs
+//- add documentation for contributing
+
 
 var twit = require('twit');
 var config = require('./config.js');
