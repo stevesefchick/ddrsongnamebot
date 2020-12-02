@@ -2,3 +2,4 @@
 /test_image_output
 .env
 fakeddrbot.code-workspace
+/image_output/image.png

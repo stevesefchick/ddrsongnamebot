@@ -2,7 +2,6 @@
 //- ADD ARTIST INCLUSION
 //- Add "types" to jacket
 //- Add 3-4 more fonts
-//- Add 3-4 more FGs
 //- add documentation for contributing
 
 
@@ -97,10 +96,10 @@ function generateImagePromise(){
     
       while (cursor < standalonesongname.length)
       {
-        console.log(cursor);
+        //console.log(cursor);
     
         var currenttext = standalonesongname.substring(lastspot,cursor);
-        console.log(currenttext);
+        //console.log(currenttext);
     
         if (ctx.measureText(currenttext).width > 270)
         { 
@@ -216,7 +215,7 @@ function generateImagePromise(){
 
       //need to cut down on posting....
       //if 1, don't post!
-      if (randomnumber(3) == 1)
+      if (randomnumber(2) == 1)
       {
           console.log("fart noises");
       }

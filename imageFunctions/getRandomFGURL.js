@@ -25,7 +25,11 @@ module.exports = {
       'images/fg/ddr_pervert.png',
       'images/fg/ddr_emi.png',
       'images/fg/ddr_rage.png',
-
+      'images/fg/phone1.png',
+      'images/fg/skull1.png',
+      'images/fg/bird1.png',
+      'images/fg/bird2.png',
+      'images/fg/bird3.png',
     ];
     
     fg = possibleFG[randomnumber(possibleFG.length)];
