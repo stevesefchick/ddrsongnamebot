@@ -35,7 +35,16 @@ module.exports = {
       'images/bg/bg_grad10.jpg',
       'images/bg/bg_rainbow1.jpg',
       'images/bg/bg_rainbow2.jpg',
-      'images/bg/bg_cloud1.jpg'
+      'images/bg/bg_cloud1.jpg',
+      'images/bg/bg_space3.jpg',
+      'images/bg/bg_space4.jpg',
+      'images/bg/bg_gems1.jpg',
+      'images/bg/bg_gems2.jpg',
+      'images/bg/bg_gems3.jpg',
+      'images/bg/bg_cloud2.jpg',
+      'images/bg/bg_cloud3.jpg',
+      'images/bg/bg_hands1.jpg',
+      'images/bg/bg_rainbow3.jpg',
 
     ];
     
