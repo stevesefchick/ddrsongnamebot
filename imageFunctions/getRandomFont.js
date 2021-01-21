@@ -42,14 +42,21 @@ module.exports = {
       '28px Luckiest Guy',
       '26px Luckiest Guy',
       '30px Luckiest Guy',
-      '30px Major Mono Display',
-      '26px Major Mono Display',
-      '28px Major Mono Display',
       '26px Monoton',
       '24px Monoton',
-      '28px Monoton'
-
-
+      '28px Monoton',
+      '22px Krona One',
+      '24px Krona One',
+      '26px Krona One',
+      '24px Potta One',
+      '26px Potta One',
+      '28px Potta One',
+      '24px Spicy Rice',
+      '26px Spicy Rice',
+      '28px Spicy Rice',
+      '24px Ultra',
+      '26px Ultra',
+      '28px Ultra',
 
 
     ];

@@ -1,9 +1,9 @@
 //TODO
 //- ADD ARTIST INCLUSION
 //- Add "types" to jacket
-//- Add 3-4 more fonts
 //- add documentation for contributing
-
+// - add songs with just challenge difficulty
+// -add songs with no challenge chart
 
 var twit = require('twit');
 var config = require('./config.js');
@@ -23,8 +23,11 @@ registerFont('fonts/Shojumaru-Regular.ttf', {family: 'Shojumaru'});
 registerFont('fonts/FredokaOne-Regular.ttf', {family: 'Fredoka One'});
 registerFont('fonts/Goldman-Bold.ttf', {family: 'Goldman'});
 registerFont('fonts/LuckiestGuy-Regular.ttf', {family: 'Luckiest Guy'});
-registerFont('fonts/MajorMonoDisplay-Regular.ttf', {family: 'Major Mono Display'});
 registerFont('fonts/Monoton-Regular.ttf', {family: 'Monoton'});
+registerFont('fonts/KronaOne-Regular.ttf', {family: 'Krona One'});
+registerFont('fonts/PottaOne-Regular.ttf', {family: 'Potta One'});
+registerFont('fonts/SpicyRice-Regular.ttf', {family: 'Spicy Rice'});
+registerFont('fonts/Ultra-Regular.ttf', {family: 'Ultra'});
 
 const canvas = createCanvas(300, 300);
 const ctx = canvas.getContext('2d');
@@ -66,6 +69,57 @@ return new Promise(function(resolve,reject){
 
     //GET ARTIST NAME
     songName += artistName.getArtist();
+
+    //CARRIAGE RETURN x2
+    songName += "\n\n";
+
+
+    //DO DIFFICULTIES
+
+    //max of 6
+    var beginner = randomnumber(5)+1;
+    //max of 10
+    var light = beginner + randomnumber(3)+1;
+    //max of 15
+    var standard = light + randomnumber(4)+1;
+    //max of 18
+    var expert = standard + randomnumber(2)+1;
+    if (expert<10)
+    {
+      expert+=4;
+    }
+    //max of 19
+    var challenge = expert + randomnumber(3)+1
+    if (challenge>19)
+    {
+      challenge=19;
+    }
+    
+    //BEGINNER
+    songName += "🟦 ";
+    songName += beginner;
+    songName += "\n";
+
+    //LIGHT
+    songName += "🟨 ";
+    songName += light;
+    songName += "\n";
+
+    //STANDARD
+    songName += "🟥 ";
+    songName+=standard;
+    songName += "\n";
+
+    //EXPERT
+    songName += "🟩 ";
+    songName += expert;
+    songName += "\n";
+
+    //CHALLENGE
+    songName += "🟪 ";
+    songName += challenge;
+    songName += "\n";
+
 
     fullsongname=songName;
 
@@ -167,12 +221,6 @@ function generateImagePromise(){
           ctx.fillText(texts[i], 15, startingY+(yHeight*i));
         }
     
-        //console.log(canvas.toDataURL());
-        //fs.writeFile('test_image_output/test.txt',canvas.toDataURL(), (err)=>
-        //{
-            // In case of a error throw err. 
-        //    if (err) throw err; 
-        //});
     
         var outstream = fs.createWriteStream('image_output/image.png');
         var dataUrl = canvas.createPNGStream().pipe(outstream);
@@ -206,8 +254,6 @@ function generateImagePromise(){
 
   var postThatBadSong = function()
   {
-      //var post = generatePost();
-      //var image = generateImage();
   
       var post = fullsongname;
       //console.log(post);
@@ -225,6 +271,7 @@ function generateImagePromise(){
         var imagedata = fs.readFileSync('./image_output/image.png', {encoding:'base64'});
 
             //console.log(image);
+            
               Twitter.post('media/upload', { media_data: imagedata }, function (err, data, response) {
                 if (err)
                 {
@@ -253,7 +300,7 @@ function generateImagePromise(){
               
 
               });
-
+                
 
       }
 

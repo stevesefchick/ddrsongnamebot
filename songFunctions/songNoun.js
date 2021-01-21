@@ -91,7 +91,8 @@ module.exports = {
         "Stardom",
         "Amaretto",
         "Card",
-        "Queen"
+        "Queen",
+        "Fashion"
     ];
     
     noun = possibleNoun[randomnumber(possibleNoun.length)];

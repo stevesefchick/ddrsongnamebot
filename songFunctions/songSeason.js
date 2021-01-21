@@ -16,6 +16,7 @@ module.exports = {
         "Snowy",
         "Summer",
         "Spring",
+        "Autumn",
         "Midnight"
     ];
     
