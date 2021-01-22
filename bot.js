@@ -83,13 +83,18 @@ return new Promise(function(resolve,reject){
     //max of 15
     var standard = light + randomnumber(4)+1;
     //max of 18
-    var expert = standard + randomnumber(2)+1;
+    var expert = standard + randomnumber(4)+1;
     if (expert<10)
     {
       expert+=4;
     }
+    if (expert >18)
+    {
+      expert=18;
+    }
     //max of 19
-    var challenge = expert + randomnumber(3)+1
+    var challenge = expert + randomnumber(3)+1;
+    var displaychallenge = randomnumber(2)+1;
     if (challenge>19)
     {
       challenge=19;
@@ -115,11 +120,13 @@ return new Promise(function(resolve,reject){
     songName += expert;
     songName += "\n";
 
-    //CHALLENGE
-    songName += "🟪 ";
-    songName += challenge;
-    songName += "\n";
-
+    if (displaychallenge==1)
+    {
+      //CHALLENGE
+      songName += "🟪 ";
+      songName += challenge;
+      songName += "\n";
+    }
 
     fullsongname=songName;
 
