@@ -81,9 +81,9 @@ return new Promise(function(resolve,reject){
     //max of 10
     var light = beginner + randomnumber(3)+1;
     //max of 15
-    var standard = light + randomnumber(4)+1;
+    var standard = light + randomnumber(5)+1;
     //max of 18
-    var expert = standard + randomnumber(4)+1;
+    var expert = standard + randomnumber(4)+2;
     if (expert<10)
     {
       expert+=4;
@@ -93,7 +93,7 @@ return new Promise(function(resolve,reject){
       expert=18;
     }
     //max of 19
-    var challenge = expert + randomnumber(3)+1;
+    var challenge = expert + randomnumber(5)+1;
     var displaychallenge = randomnumber(2)+1;
     if (challenge>19)
     {
