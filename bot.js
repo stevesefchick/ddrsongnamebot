@@ -5,6 +5,10 @@
 // - add songs with just challenge difficulty
 // -add songs with no challenge chart
 
+//TODO: Add new artists
+//TODO: Add new name variations
+//TODO: Add new title deviations
+
 var twit = require('twit');
 var config = require('./config.js');
 var fs = require('fs');
